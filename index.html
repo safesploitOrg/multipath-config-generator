@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multipath Config Generator</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/icons8-script-listener-96x96.png">
+</head>
+<body>
+
+  <h2>Paste multipath -ll output:</h2>
+  <textarea id="input" placeholder="Paste 'multipath -ll' output here..."></textarea>
+
+  <button onclick="generate()">Generate Config</button>
+  <button onclick="copyOutput()">Copy Output</button>
+
+  <h2>Formatted Output:</h2>
+  <textarea id="output" readonly></textarea>
+
+  <footer>
+    <p>
+      © <span id="year"></span>
+      <strong>Multipath Config Generator</strong> by safesploit —
+      <a href="https://github.com/safesploitOrg/multipath-config-generator" target="_blank" rel="noopener noreferrer">
+        View on GitHub
+      </a>
+    </p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
