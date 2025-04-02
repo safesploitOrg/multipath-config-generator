@@ -38,6 +38,8 @@ multipaths {
 }
 ```
 
+---
+
 | Option   | Purpose                                          |
 |----------|--------------------------------------------------|
 | `alias`  | Human-readable name assigned to the multipath map |
@@ -51,6 +53,7 @@ multipaths {
 | `prio`                | Can override global/default setting |
 | `no_path_retry`       | Can override global/default setting |
 
+---
 
 ### Devices
 
@@ -72,6 +75,8 @@ devices {
 }
 ```
 
+---
+
 | Option               | Purpose                                             |
 |----------------------|-----------------------------------------------------|
 | `vendor`, `product`  | Matches your SAN device                             |
@@ -84,6 +89,8 @@ devices {
 | `failback`           | Immediately fail back to preferred path             |
 | `rr_weight`          | Round robin weight for path usage                   |
 | `no_path_retry`      | Retry for 60 seconds if paths are lost              |
+
+---
 
 ### Defaults
 
@@ -103,6 +110,8 @@ defaults {
     gid 0
 }
 ```
+
+---
 
 | Option               | Purpose                                                                 |
 |----------------------|-------------------------------------------------------------------------|
