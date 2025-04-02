@@ -58,7 +58,7 @@ function parseMultipathOutput(input) {
 
 function formatMultipathConf(entries) {
   const output = [];
-  output.push("multipathd {\n");
+  output.push("multipaths {\n");
 
   for (const entry of entries) {
     output.push(`    # LUN ${entry.lun} and size=${entry.size}`);
