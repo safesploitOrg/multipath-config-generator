@@ -26,6 +26,14 @@ chronme index.html
 
 ## Example `/etc/multipath.conf`
 
+This file defines how Linux handles multipath devices. It includes:
+
+- **multipaths**: Specific multipath maps (aliases to WWIDs)
+- **devices**: Rules for matching SAN hardware
+- **defaults**: System-wide fallback settings
+
+---
+
 ### Multipaths
 
 ```text
