@@ -24,7 +24,7 @@ cd multipath-config-generator
 chronme index.html
 ```
 
-## Example `/etc/multipath/multipath.conf`
+## Example `/etc/multipath.conf`
 
 ### Multipaths
 
