@@ -27,20 +27,20 @@ function parseMultipathOutput(input) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
-    // Match: mpathX (wwid)
-    const wwidMatch = line.match(/^mpath\w+\s+\((.*?)\)/);
-    if (wwidMatch) {
-      const wwid = wwidMatch[1];
+    // Match: <alias> (wwid) or mpathX (wwid)
+    const match = line.match(/^([\w\-]+)\s+\(([0-9a-f]+)\)/i);
+    if (match) {
+      const alias = match[1]; // can be a friendly name or mpathX
+      const wwid = match[2];
       let size = "UNKNOWN";
       let lun = "UNKNOWN";
 
+      // Look ahead for size and LUN info
       for (let j = i; j < i + 15 && j < lines.length; j++) {
         const lookahead = lines[j];
 
-        if (lookahead.includes("size=")) {
-          const sizeMatch = lookahead.match(/size=([\d\.]+[TG])/);
-          if (sizeMatch) size = sizeMatch[1];
-        }
+        const sizeMatch = lookahead.match(/size=([\d.]+[TG])/);
+        if (sizeMatch) size = sizeMatch[1];
 
         const lunMatch = lookahead.match(/\d+:\d+:\d+:(\d+)/);
         if (lunMatch) {
@@ -49,12 +49,13 @@ function parseMultipathOutput(input) {
         }
       }
 
-      entries.push({ wwid, size, lun, alias: "unknown-alias" });
+      entries.push({ alias, wwid, size, lun });
     }
   }
 
   return entries;
 }
+
 
 function formatMultipathConf(entries) {
   const output = [];

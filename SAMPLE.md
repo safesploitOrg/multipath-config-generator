@@ -32,7 +32,7 @@ size=3.3T features='1 queue_if_no_path' hwhandler='1 alua' wp=rw
   |- 11:0:5:1  sdy  65:128 active ready running
   |- 13:0:2:1  sdau 66:224 active ready running
   - 13:0:4:1  sdcb 68:240 active ready running
-mpathc (360060160e7d04900afacea671f2bd112) dm-3 DGC,VRAID
+iso_coldstore (360060160e7d04900afacea671f2bd112) dm-3 DGC,VRAID
 size=20T features='1 queue_if_no_path' hwhandler='1 alua' wp=rw
 |-+- policy='service-time 0' prio=50 status=active
 | |- 11:0:1:10 sdl  8:176  active ready running
