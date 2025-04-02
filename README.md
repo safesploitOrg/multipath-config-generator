@@ -122,8 +122,8 @@ defaults {
 | `path_checker`        | Path health checker. `tur` (Test Unit Ready) is suitable for ALUA.     |
 | `rr_min_io`           | Number of I/O requests before switching paths in round-robin mode.     |
 | `failback`            | When a better path returns, fail back to it (`immediate`, `manual`).   |
-| `no_path_retry`       | Retry count or mode (`fail`, `queue`, `N` times) on path failure.       |
+| `no_path_retry`       | Retry count or mode (`fail`, `queue`, `N` times) on path failure.      |
 | `max_fds`             | Max number of file descriptors multipathd can open.                    |
-| `mode`                | Permissions on multipath devices (e.g., `0644`).                        |
+| `mode`                | Permissions on multipath devices (e.g., `0644`).                       |
 | `uid`                 | Owner user ID for device files. Usually `0` (root).                    |
 | `gid`                 | Owner group ID for device files. Usually `0` (root).                   |
