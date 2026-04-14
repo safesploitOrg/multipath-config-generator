@@ -1,3 +1,16 @@
+// Multipath Output to multipath.conf Generator
+
+// ================================================================
+// Author: Zepher Ashe (@safesploit)
+// ================================================================
+
+
+// =================== VARIABLES ===================
+// Vim indent settings: set shiftwidth=4 tabstop=4 expandtab
+const INDENT = "\t";      // Vim tabs
+// const INDENT = "    "; // 4 spaces
+
+
 function generate() {
   const rawInput = getInput();
   const parsed = parseMultipathOutput(rawInput);
@@ -57,13 +70,32 @@ function parseMultipathOutput(input) {
 }
 
 
+// function formatMultipathConf(entries) {
+//   const output = [];
+//   output.push("multipaths {\n");
+
+//   for (const entry of entries) {
+//     output.push(`    # LUN ${entry.lun} and size=${entry.size}`);
+//     output.push(`    multipath {\n        alias   ${entry.alias}\n        wwid    ${entry.wwid}\n    }\n`);
+//   }
+
+//   output.push("}");
+//   return output.join('\n');
+// }
+
 function formatMultipathConf(entries) {
   const output = [];
+
   output.push("multipaths {\n");
 
   for (const entry of entries) {
-    output.push(`    # LUN ${entry.lun} and size=${entry.size}`);
-    output.push(`    multipath {\n        alias   ${entry.alias}\n        wwid    ${entry.wwid}\n    }\n`);
+    output.push(`${INDENT}# LUN ${entry.lun} and size=${entry.size}`);
+    output.push(
+      `${INDENT}multipath {\n` +
+      `${INDENT}${INDENT}alias   ${entry.alias}\n` +
+      `${INDENT}${INDENT}wwid    ${entry.wwid}\n` +
+      `${INDENT}}\n`
+    );
   }
 
   output.push("}");
